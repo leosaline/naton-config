@@ -3,7 +3,7 @@ server:
 
 eureka:
   instance:
-    hostname: localhost
+    hostname: natoneurekaserver
     port: 9091
   client:
     registerWithEureka: true
@@ -26,14 +26,14 @@ security:
 spring:
     datasource:
         data: classpath:/sql/data.sql
-        driver-class-name: com.mysql.cj.jdbc.Driver
-        password: '1234'
+        driver-class-name: org.mariadb.jdbc.Driver
+        password: 'leo'
         platform: mysql
         schema: classpath:/sql/schema.sql
-        url: jdbc:mysql://localhost/oauth?verifyServerCertificate=false&useSSL=false&requireSSL=false&useTimezone=true&serverTimezone=UTC
+        url: jdbc:mysql://naton_db_1/oauth?verifyServerCertificate=false&useSSL=false&requireSSL=false&useTimezone=true&serverTimezone=UTC
         username: root
     jpa:
-        database-platform: org.hibernate.dialect.MySQLDialect
+        database-platform: org.hibernate.dialect.MariaDBDialect
         generate-ddl: false
         hibernate:
             ddl-auto: none
